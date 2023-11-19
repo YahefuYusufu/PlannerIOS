@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct PlannerApp: App {
+   @StateObject var plansVM = PlansViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+              .environmentObject(plansVM)
         }
     }
 }
