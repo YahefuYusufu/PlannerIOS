@@ -19,7 +19,7 @@ struct DetailView: View {
              .textFieldStyle(.plain)
              .padding(.vertical)
              .listRowSeparator(.hidden)
-          
+
           Toggle("Set Reminder:", isOn: $plan.remainderIsOn)
              .padding(.top)
              .listRowSeparator(.hidden)

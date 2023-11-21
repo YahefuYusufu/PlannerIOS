@@ -16,23 +16,25 @@ struct MainView: View {
          List {
             ForEach(plansVM.plans) {plan in
                HStack {
-                  Image(systemName: plan.isCompleted ? "checkmark.rectangle" : "rectangle")
+                  Image(systemName: plan.isCompleted ? "checkmark.seal.fill" : "checkmark.seal")
                      .onTapGesture {
                         plansVM.toggleCompleted(plan: plan)
                      }
+                     .font(.title2)
                   NavigationLink {
                      DetailView(plan: plan)
+                        .foregroundStyle(.green)
                   } label: {
                      VStack {
                         Text(plan.item)
-                           .font(.caption)
+                           .font(.title)
                         Text(plan.notes)
+                           .font(.title3)
                      }
                   }
-                  .padding(10)
+                  .padding()
                }
-               
-               .background(Color.green)
+               .background(Color.cyan)
                .foregroundColor(.white)
                .cornerRadius(10)
                
@@ -41,9 +43,9 @@ struct MainView: View {
             .onDelete(perform: plansVM.deletePlan)
             .onMove(perform: plansVM.movePlan)
          }
-         .navigationTitle("Plan")
-         .navigationBarTitleDisplayMode(.large)
-         .listStyle(.automatic)
+         .navigationTitle("Plans")
+         .navigationBarTitleDisplayMode(.inline)
+         .listStyle(.grouped)
          .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                EditButton()
@@ -52,7 +54,7 @@ struct MainView: View {
                Button {
                   sheetIsPresented.toggle()
                } label: {
-                  Image(systemName: "plus")
+                  Image(systemName: "plus.square.fill")
                }
             }
          }
