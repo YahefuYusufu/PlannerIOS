@@ -23,17 +23,27 @@ struct MainView: View {
                   NavigationLink {
                      DetailView(plan: plan)
                   } label: {
-                     Text(plan.item)
+                     VStack {
+                        Text(plan.item)
+                           .font(.caption)
+                        Text(plan.notes)
+                     }
                   }
+                  .padding(10)
                }
-               .font(.title2)
+               
+               .background(Color.green)
+               .foregroundColor(.white)
+               .cornerRadius(10)
+               
+               
             }
             .onDelete(perform: plansVM.deletePlan)
             .onMove(perform: plansVM.movePlan)
          }
          .navigationTitle("Plan")
          .navigationBarTitleDisplayMode(.large)
-         .listStyle(.plain)
+         .listStyle(.automatic)
          .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                EditButton()
