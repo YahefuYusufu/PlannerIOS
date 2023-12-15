@@ -14,6 +14,11 @@ struct DetailView: View {
    
     var body: some View {
        List {
+           Text("Enter your Plan")
+               .font(.title)
+               .fontWeight(.medium)
+               .padding(.top, 20.0)
+           
           TextField("Enter Plan Here...",text:$plan.item)
              .font(.title2)
              .textFieldStyle(.plain)
