@@ -34,7 +34,7 @@ struct MainView: View {
                   }
                   .padding()
                }
-               .background(Color.cyan)
+               .background(Color.red)
                .foregroundColor(.green)
                .cornerRadius(10)
                
