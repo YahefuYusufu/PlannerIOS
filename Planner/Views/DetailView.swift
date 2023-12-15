@@ -22,7 +22,7 @@ struct DetailView: View {
           TextField("Enter Plan Here...",text:$plan.item)
                .font(.body)
              .textFieldStyle(.plain)
-             .padding(.vertical)
+             .padding([.top, .leading, .bottom])
              .listRowSeparator(.hidden)
              .border(Color.gray)
 
