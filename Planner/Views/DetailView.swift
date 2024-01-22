@@ -51,6 +51,7 @@ struct DetailView: View {
                 dismiss()
              }
           }
+           
           ToolbarItem(placement: .navigationBarTrailing){
              Button("Save") {
                 plansVM.savePlan(plan: plan)

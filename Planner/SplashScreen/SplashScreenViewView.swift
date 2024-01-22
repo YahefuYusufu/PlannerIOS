@@ -19,7 +19,7 @@ struct SplashScreenView: View {
             } else {
                 VStack {
                     ZStack {
-                        Image("logo-2")
+                        Image("Logo-2")
                             .padding([.bottom, .trailing], 25.0)
                     }
                     .scaleEffect(size)
@@ -43,5 +43,5 @@ struct SplashScreenView: View {
 }
 
 #Preview {
-    SplashScreenView()
+    SplashScreenViewView()
 }
