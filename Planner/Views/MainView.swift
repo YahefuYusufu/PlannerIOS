@@ -23,7 +23,6 @@ struct MainView: View {
                      .font(.title2)
                   NavigationLink {
                      DetailView(plan: plan)
-                        .foregroundStyle(.green)
                   } label: {
                      VStack {
                         Text(plan.item)
@@ -33,15 +32,17 @@ struct MainView: View {
                      }
                   }
                   .padding()
+                   
                }
-               .background(Color.black)
-               .foregroundColor(.green)
+               .background(Color.white)
+               .foregroundColor(.black)
                .cornerRadius(10)
                
                
             }
             .onDelete(perform: plansVM.deletePlan)
             .onMove(perform: plansVM.movePlan)
+             
          }
          .navigationTitle("Plans")
          .navigationBarTitleDisplayMode(.inline)
